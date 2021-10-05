@@ -1,0 +1,20 @@
+name: GitHub Actions Check File
+on: [push]
+#  pull_request_review:
+#    types: [submitted]
+#    paths:
+#      - '***.md'
+
+jobs:
+  list-pushed-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jitterbit/get-changed-files@v1
+        with:
+          format: 'md'
+    
+#  check-state:
+#   if: github.event.review.state == 'approved'
+#    uses: jitterbit/get-changed-files@v1
+#    with:
+#      format: 'md'
